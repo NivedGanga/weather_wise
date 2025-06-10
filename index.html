@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Weather</title>
+</head>
+
+<body>
+  <div id="main-element" class="w-full h-screen relative grid">
+    <h1 id="title-text" class="font-bold z-10 text-6xl absolute left-1/2 -translate-x-1/2 top-[10%] self-center ">
+      <span class="text-[#1A93DE]">Weather</span><span class="text-[#E7D531]">Wise</span>
+    </h1>
+    <div id="cloud-bg" class="w-full absolute h-screen top-0 overflow-clip">
+      <img class=" absolute top-0 -left-1/5" src="./public/assets/cloud.png" alt="">
+      <img class="-bottom-1/6 absolute -right-1/3" src="./public/assets/cloud.png" alt="">
+    </div>
+    <!-- data area -->
+    <div class="place-content-center flex flex-col px-[10%] z-10">
+      <div class="flex flex-col relative">
+        <label class="text-morning-color bg-night-color font-semibold" for="location">Select your location</label>
+        <div class="flex gap-5">
+          <div class="relative w-fit">
+            <input id="search-location-field" type="text"
+              class="bg-white px-5 text-black py-2 w-80 rounded-xl border border-gray-500">
+            <button id="search-location-field-arrow" class="right-3 absolute  inset-y-0 text-black my-auto hover:bg-gray-100 h-fit rounded-2xl">
+              <span class="material-symbols-outlined">
+                keyboard_arrow_up
+              </span>
+            </button>
+          </div>
+          <button id="get-weather-button" class="px-4 text-sm rounded-xl font-bold cursor-pointer">
+            Get Weather
+          </button>
+        </div>
+        <div id="city-names"
+          class="z-20 hidden text-black absolute -bottom-1 translate-y-full max-h-36 bg-white w-80 rounded-xl py-2 overflow-auto">
+        </div>
+      </div>
+      <div id="weather-data" class="flex flex-col mt-14 hidden">
+        <div class="flex w-96 justify-between">
+          <div>
+            <h2 id="city-name" class="font-bold text-2xl">Tirur</h2>
+            <h3 id="region" class="text-lg">Kerala, India</h3>
+          </div>
+          <h2 class="text-5xl font-bold">
+            <span id="temparature">32</span><span class="font-medium text-3xl">
+              °C
+            </span>
+          </h2>
+        </div>
+        <div class="mt-8">
+          <h3 class="text-lg">Current weather</h3>
+          <h2 id="weather-condition" class="font-bold text-2xl">Light rain shower</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./dest/index.js"></script>
+</body>
+
+</html>
